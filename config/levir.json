@@ -11,7 +11,7 @@
         "results": "results",
         "checkpoint": "checkpoint",
         //"resume_state": null
-        "resume_state": "experiments/ddpm-RS-Unet_220428_183313/checkpoint/I190000_E97" //"experiments/ddpm-RS-Unet_220425_062858/checkpoint/I60000_E8" //set path to pre-trained diffusion model
+        "resume_state": "pretrained/I190000_E97" //"experiments/ddpm-RS-Unet_220425_062858/checkpoint/I60000_E8" //set path to pre-trained diffusion model
     },
 
     "path_cd": { //set the path 
@@ -26,8 +26,8 @@
 
     "datasets": {
         "train": {
-            "name": "LEVIR-CD-256",
-            "dataroot": "dataset/LEVIR-CD256/",
+            "name": "LEVIR",
+            "dataroot": "datasets/LEVIR",
             "resolution": 256, // high resolution
             "batch_size": 8,
             "num_workers": 8,
@@ -35,8 +35,8 @@
             "data_len": -1 // -1 represents all data used in train
         },
         "val": {
-            "name": "LEVIR-CD-256",
-            "dataroot": "dataset/LEVIR-CD256/",
+            "name": "LEVIR",
+            "dataroot": "datasets/LEVIR",
             "resolution": 256, // high resolution
             "batch_size": 4,
             "num_workers": 8,
@@ -44,8 +44,8 @@
             "data_len": -1 // -1 represents all data used in train
         },
         "test": {
-            "name": "LEVIR-CD-256",
-            "dataroot": "dataset/LEVIR-CD256/",
+            "name": "LEVIR",
+            "dataroot": "datasets/LEVIR",
             "resolution": 256, // high resolution
             "batch_size": 4,
             "num_workers": 8,
@@ -67,7 +67,7 @@
         "which_model_G": "sr3", // use the ddpm or sr3 network structure
         "finetune_norm": false,
         "unet": {
-            "in_channel": 3,
+            "in_channel": 6,
             "out_channel": 3,
             "inner_channel": 128,
             "channel_multiplier": [
